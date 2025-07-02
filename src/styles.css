@@ -3,4 +3,8 @@
   background-image: url('assets/img/stardewbackground.png');
   background-size: cover;
   /* background-position: center; */
+};
+
+.espacio-Card {
+  size-adjust: 20px;
 }
