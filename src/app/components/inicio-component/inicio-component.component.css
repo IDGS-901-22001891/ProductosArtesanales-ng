@@ -9,8 +9,17 @@
 }
 
 
-.corousel-item {
+#carouselExampleAutoplaying {
   height: 400px; /* Altura fija */
   max-width: 800px; /* Ancho máximo (opcional) */
   margin: 0 auto; /* Centrar el carrusel */
+}
+
+
+#carouselExampleAutoplaying .carousel-inner,
+#carouselExampleAutoplaying .carousel-item,
+#carouselExampleAutoplaying img {
+  height: 100%;
+  width: 71%;
+  object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
 }

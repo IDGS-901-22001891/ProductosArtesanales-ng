@@ -2,8 +2,7 @@
 
 .footer-fondo {
   background-color: #B6D7A8;
-  border-radius: 15px;
   padding: 20px;
   border-color: black;
-  border: 2px solid;
+  border-top: 5px solid;
 }
