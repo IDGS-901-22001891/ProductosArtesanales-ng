@@ -1,25 +1,18 @@
-
-
-.inicio-fondo {
-  background-color: #6FA8DD;
-  border-radius: 15px;
-  padding: 20px;
-  border-color: black;
-  border: 2px solid;
-}
-
-
 #carouselExampleAutoplaying {
-  height: 400px; /* Altura fija */
-  max-width: 800px; /* Ancho máximo (opcional) */
-  margin: 0 auto; /* Centrar el carrusel */
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden; /* Para recortar excesos */
+  border-radius: 10px;
 }
-
 
 #carouselExampleAutoplaying .carousel-inner,
-#carouselExampleAutoplaying .carousel-item,
+#carouselExampleAutoplaying .carousel-item {
+  height: 100%;
+}
+
 #carouselExampleAutoplaying img {
   height: 100%;
-  width: 71%;
-  object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
+  width: 50%;
+  object-fit: cover;  /* * Para avarcar todo el espacio de la pantalla*/
 }
