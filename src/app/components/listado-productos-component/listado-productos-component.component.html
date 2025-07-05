@@ -15,7 +15,8 @@
       <div class="card-body">
         <h3>{{ producto.name }}</h3>
         <p>{{ producto.description }}</p>
-        <p><strong>Categoría:</strong> {{ producto.categorias }}</p>
+        <p><strong>Categoría:</strong> {{ producto.categoria || 'Sin categoría' }}</p>
+
       </div>
     </div>
   </div>
