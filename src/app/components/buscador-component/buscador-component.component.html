@@ -1,37 +1,34 @@
-<!-- ? Ahrea del contenido -->
 <div class="buscador-fondo">
+  <input type="text" name="buscador" id="inBuscador" placeholder="Buscar"
+         (input)="onInputChange($event)">
 
-  <!-- * Area de búsqueda -->
-  <input type="text" name="buscador" id="inBuscador" placeholder="Search">
+  <br><br>
 
-  <br>
-  <br>
-
-  <!-- ? Sección de los filtros -->
   <div class="justify-content-center">
     <h6>Selecciona un filtro para buscar</h6>
   </div>
-  <div>
-    <div class="d-flex justify-content-evenly">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkProdCultio">
-        <label class="form-check-label" for="checkDefault">
-          Productos de cultivos
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkProdAnimal">
-        <label class="form-check-label" for="checkDefault">
-          Productos de origen animal
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkProdArtesanal">
-        <label class="form-check-label" for="checkDefault">
-          Productos de origen marion
-        </label>
-      </div>
+
+  <div class="d-flex justify-content-evenly">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="checkProdCultivo"
+             (change)="onCheckboxChange('Productos de cultivo', $event)">
+      <label class="form-check-label" for="checkProdCultivo">
+        Productos de cultivo
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="checkProdAnimal"
+             (change)="onCheckboxChange('Productos de origen Animal', $event)">
+      <label class="form-check-label" for="checkProdAnimal">
+        Productos de origen Animal
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="checkProdMarino"
+             (change)="onCheckboxChange('Productos origen marino', $event)">
+      <label class="form-check-label" for="checkProdMarino">
+        Productos de origen marino
+      </label>
     </div>
   </div>
-
 </div>

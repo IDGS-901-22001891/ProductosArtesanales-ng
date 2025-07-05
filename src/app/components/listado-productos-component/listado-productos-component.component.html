@@ -1,3 +1,12 @@
+
+<!-- ? Escuchamos los iltros -->
+<app-buscador-component
+  (filtrosCambiados)="onFiltrosCambiados($event)"
+  (textoBusquedaCambiado)="onTextoBusquedaCambiado($event)">
+</app-buscador-component>
+
+
+
 <!-- ? Ahrea del contenido -->
 <div class="listadoProductos-fondo">
   <div class="grid-productos">
@@ -6,9 +15,7 @@
       <div class="card-body">
         <h3>{{ producto.name }}</h3>
         <p>{{ producto.description }}</p>
-        <ul>
-          <li *ngFor="let cat of producto.categorias">{{ cat }}</li>
-        </ul>
+        <p><strong>Categoría:</strong> {{ producto.categorias }}</p>
       </div>
     </div>
   </div>
