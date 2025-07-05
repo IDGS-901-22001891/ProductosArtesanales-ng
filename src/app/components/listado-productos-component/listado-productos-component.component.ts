@@ -33,16 +33,17 @@ export class ListadoProductosComponentComponent {
 
   // ? Método que se ejecuta al iniciar el componente
   ngOnInit(): void {
-    this.productoService.obtenerProductos().subscribe(
-      data => {
-        this.productos = data;
-        this.productosFiltrados = data;
-      },
-      error => {
-        console.error('Error al obtener productos:', error);
-      }
-    );
-  }
+  this.productoService.obtenerProductos().subscribe(
+    data => {
+      console.log('Productos recibidos:', data);
+      this.productos = data;
+      this.productosFiltrados = data;
+    },
+    error => {
+      console.error('Error al obtener productos:', error);
+    }
+  );
+}
 
 
   onFiltrosCambiados(filtros: string[]) {
@@ -57,12 +58,21 @@ export class ListadoProductosComponentComponent {
 
   filtrarProductos() {
     this.productosFiltrados = this.productos.filter(p => {
+      const categoria = p.categorias?.toLowerCase?.();
+
       const cumpleFiltroCategoria =
-        this.filtrosActivos.length === 0 || this.filtrosActivos.includes(p.categorias);
+        this.filtrosActivos.length === 0 ||
+        (categoria && this.filtrosActivos.some(f => f.toLowerCase() === categoria));
+
       const cumpleBusqueda =
-        !this.textoBusqueda || p.name.toLowerCase().includes(this.textoBusqueda) || p.description.toLowerCase().includes(this.textoBusqueda);
+        !this.textoBusqueda ||
+        p.name.toLowerCase().includes(this.textoBusqueda) ||
+        p.description.toLowerCase().includes(this.textoBusqueda);
+
       return cumpleFiltroCategoria && cumpleBusqueda;
     });
   }
+
+
 }
 
