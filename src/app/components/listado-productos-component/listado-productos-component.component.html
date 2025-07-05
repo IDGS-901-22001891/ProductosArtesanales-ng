@@ -1,15 +1,16 @@
 <!-- ? Ahrea del contenido -->
 <div class="listadoProductos-fondo">
-
   <div class="grid-productos">
-
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card" *ngFor="let producto of productos" style="width: 18rem;">
+      <img [src]="producto.imageUrl" class="card-img-top" alt="{{ producto.name }}">
       <div class="card-body">
-        <p class="card-text">Some quick example text...</p>
+        <h3>{{ producto.name }}</h3>
+        <p>{{ producto.description }}</p>
+        <ul>
+          <li *ngFor="let cat of producto.categorias">{{ cat }}</li>
+        </ul>
       </div>
     </div>
-
-
   </div>
 </div>
+
