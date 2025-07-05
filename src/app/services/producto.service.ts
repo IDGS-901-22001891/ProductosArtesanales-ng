@@ -8,10 +8,13 @@ import { Producto } from '../Interfaces/producto';
 })
 export class ProductoService {
 
-  private apiUrl = 'https://localhost:7142/Listar';
+  private apiUrl = 'https://localhost:7224/api/Productos/Listar';
 
+  // ? Llamamos al objeto en específico para poder trabajar con peticiones
   constructor(private http: HttpClient) {}
 
+
+  // * Método para poder traernos los elementos de la API
   obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.apiUrl);
   }
