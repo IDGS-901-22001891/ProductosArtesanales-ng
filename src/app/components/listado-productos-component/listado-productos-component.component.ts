@@ -34,16 +34,19 @@ export class ListadoProductosComponentComponent {
   // ? Método que se ejecuta al iniciar el componente
   ngOnInit(): void {
   this.productoService.obtenerProductos().subscribe(
-    data => {
-      console.log('Productos recibidos:', data);
-      this.productos = data;
-      this.productosFiltrados = data;
-    },
-    error => {
-      console.error('Error al obtener productos:', error);
-    }
-  );
-}
+      data => {
+        console.log('Productos recibidos:', data);
+        const categorias = data.map(p => p.categorias);
+        console.log('Categorías únicas:', [...new Set(categorias)]);
+        this.productos = data;
+        this.productosFiltrados = data;
+      },
+      error => {
+        console.error('Error al obtener productos:', error);
+      }
+    );
+  }
+
 
 
   onFiltrosCambiados(filtros: string[]) {
@@ -61,8 +64,10 @@ export class ListadoProductosComponentComponent {
       const categoria = p.categorias?.toLowerCase?.();
 
       const cumpleFiltroCategoria =
-        this.filtrosActivos.length === 0 ||
-        (categoria && this.filtrosActivos.some(f => f.toLowerCase() === categoria));
+      this.filtrosActivos.length === 0 ||
+      (typeof p.categorias === 'string' &&
+      this.filtrosActivos.some(f => f.trim().toLowerCase() === p.categorias.trim().toLowerCase()));
+
 
       const cumpleBusqueda =
         !this.textoBusqueda ||
