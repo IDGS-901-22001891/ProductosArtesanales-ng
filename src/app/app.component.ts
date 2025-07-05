@@ -1,26 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CabeceraComponentComponent } from './components/cabecera-component/cabecera-component.component';
-import { InicioComponentComponent } from './components/inicio-component/inicio-component.component';
 import { FooterComponentComponent } from './components/footer-component/footer-component.component';
-import { ListadoProductosComponentComponent } from "./components/listado-productos-component/listado-productos-component.component";
-import { BuscadorComponentComponent } from "./components/buscador-component/buscador-component.component";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet,
     CabeceraComponentComponent,
-    // InicioComponentComponent,
-    FooterComponentComponent,
-    ListadoProductosComponentComponent,
-    BuscadorComponentComponent
-],
+    FooterComponentComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-
-
 export class AppComponent {
   title = 'ProductosArtesanales';
 }
