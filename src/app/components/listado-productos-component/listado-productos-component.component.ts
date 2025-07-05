@@ -58,8 +58,7 @@ export class ListadoProductosComponentComponent {
   filtrarProductos() {
     this.productosFiltrados = this.productos.filter(p => {
       const cumpleFiltroCategoria =
-      this.filtrosActivos.length === 0 ||
-      p.categorias.some(cat => this.filtrosActivos.includes(cat));
+        this.filtrosActivos.length === 0 || this.filtrosActivos.includes(p.categorias);
       const cumpleBusqueda =
         !this.textoBusqueda || p.name.toLowerCase().includes(this.textoBusqueda) || p.description.toLowerCase().includes(this.textoBusqueda);
       return cumpleFiltroCategoria && cumpleBusqueda;
