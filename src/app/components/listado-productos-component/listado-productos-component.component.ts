@@ -11,10 +11,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './listado-productos-component.component.css'
 })
 export class ListadoProductosComponentComponent {
+
+  // ? Creamos un array de productos
   productos: Producto[] = [];
 
+  // ? Inyectamos el servicio de productos
   constructor(private productoService: ProductoService) {}
 
+  // ? Método que se ejecuta al iniciar el componente
   ngOnInit(): void {
     this.productoService.obtenerProductos().subscribe(
       data => {

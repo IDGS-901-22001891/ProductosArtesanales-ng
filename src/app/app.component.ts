@@ -19,6 +19,8 @@ import { BuscadorComponentComponent } from "./components/buscador-component/busc
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
   title = 'ProductosArtesanales';
 }
